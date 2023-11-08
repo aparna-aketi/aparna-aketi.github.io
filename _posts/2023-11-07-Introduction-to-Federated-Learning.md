@@ -40,7 +40,7 @@ FedAvg Algorithm is developed for a centralized federated learning setup with ho
    1. Split $D_k$ into batches of size B and set $x_k = x$
    2. **for** each local epoch $i=1,2,...,E$ **do**
        * **for** each batch $b$ **do**
-         * $x_k = x_k - \eta \nabla l(x_k,b)$ 
+         * $x_k = x_k - \eta \nabla L(x_k,b)$ 
    3. return $x_k$ to server
 
 
