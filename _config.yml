@@ -40,4 +40,4 @@ defaults:
       path: ""
       type: posts
     values:
-      tags: "Decentralized Federated Learning" 
+      tags: "Decentralized-FL" 
