@@ -42,4 +42,4 @@ defaults:
       path: ""
       type: posts
     values:
-      tags: "Decentralized-FL" 
+      tags: "Others" 
