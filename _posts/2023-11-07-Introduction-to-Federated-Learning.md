@@ -18,6 +18,9 @@ The types of federated learning can be defined based on four different aspects n
 * **Connectivity:** Based on connectivity Federated Learning can be divided into Centralized FL and Decentralized FL.
     * *Centralized FL*: In this setup, we have a central server that acts as an aggregator or a master, and all the clients are connected to the server. The clients send the local model updates to the server which then aggregates the information collected from all the clients and sends the updated model back to clients.
     * *Decentralized FL*: In this setup, the clients are connected in a peer-to-peer manner getting rid of the central server. The information spreads across the clients like gossip i.e., each client communicates information to its neighbors and they send it to their neighbors and so on.
+  
+![Centralized vs Decentralized Federated Learning]({{ '/assets/types.png' | relative_url }}) 
+**Figure 1: Centralized vs Decentralized Federated Learning.**
  
 In all these cases, we assumed that models (ANNs) and data distributions are homogeneous. We can introduce heterogeneity in the system by having (a) different model architectures on different clients (eg: some clients have ResNet and some have MobileNet) or (b) different data distributions across clients (eg: some clients have more cats than tress and some have more trees than cats).
 
