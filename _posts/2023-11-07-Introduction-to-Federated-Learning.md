@@ -21,9 +21,9 @@ The types of federated learning can be defined based on four different aspects n
   
 ![Centralized vs Decentralized Federated Learning]({{ '/assets/types.png' | relative_url }}) 
 <div align="center">
-    **Figure 1: Centralized vs Decentralized Federated Learning Setups.**
+<strong>Figure 1: Centralized vs Decentralized Federated Learning Setups.</strong>
 </div>
-
+<br>
  
 In all these cases, we assumed that models (ANNs) and data distributions are homogeneous. We can introduce heterogeneity in the system by having (a) different model architectures on different clients (eg: some clients have ResNet and some have MobileNet) or (b) different data distributions across clients (eg: some clients have more cats than tress and some have more trees than cats).
 
