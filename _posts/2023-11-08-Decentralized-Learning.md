@@ -11,7 +11,7 @@ Decentralized learning is a branch of distributed learning that focuses on learn
    
 The adjacency matrix $W$ of the graph is also known as the mixing matrix, weight matrix, or connectivity matrix. 
 
-![Decentralized learning setup with 5 agents connected in a ring topology.](./images/decL.png)
+![Decentralized learning setup with 5 agents connected in a ring topology.]({{site.baseurl}}/images/decL.png "Image 1")
 
 The main goal of decentralized machine learning is to learn a global model using the knowledge extracted from the locally generated and stored data samples across $n$ agents while maintaining privacy constraints. In particular, we solve the optimization problem of minimizing global loss function $f(x)$ distributed across n agents as given by the below equation. Note that $F_i$ is a local loss function (for example, cross-entropy loss $L_{ce}$) defined in terms of the data sampled ($d_i$) from the local dataset $D_i$ at agent $i$ with model parameters $x_i$.
 
