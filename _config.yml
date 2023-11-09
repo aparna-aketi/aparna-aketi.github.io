@@ -15,7 +15,7 @@ instagram_username: "aparna_aketi"
 #pinterest_username: username
 #youtube_username: username
 #googleplus_username: +username
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/aparna-aketi.github.io" # the subpath of your site, e.g. /blog
 url: "https://aparna-aketi.github.io" 
 
 #########################################################################################
