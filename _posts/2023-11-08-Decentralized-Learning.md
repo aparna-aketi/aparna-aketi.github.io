@@ -18,7 +18,7 @@ The adjacency matrix $W$ of the graph is also known as the mixing matrix, weight
 The main goal of decentralized machine learning is to learn a global model using the knowledge extracted from the locally generated and stored data samples across $n$ agents while maintaining privacy constraints. In particular, we solve the optimization problem of minimizing global loss function $f(x)$ distributed across n agents as given by the below equation. Note that $F_i$ is a local loss function (for example, cross-entropy loss $L_{ce}$) defined in terms of the data sampled ($d_i$) from the local dataset $D_i$ at agent $i$ with model parameters $x_i$.
 
   $\min \limits_{x \in \mathbb{R}^d} f(x) = \frac{1}{n} \sum \limits_{i=1}^n f_i(x)$
-  and $f_i(x) = \mathbb{E}_{d_i \in D_i}[F_i(x; d_i)]$
+  where $f_i(x) = \mathbb{E}_{d_i \in D_i}[F_i(x; d_i)]$
 
 This is typically achieved by combining [stochastic gradient descent](https://link.springer.com/chapter/10.1007/978-3-7908-2604-3_16) with global consensus-based [gossip averaging](https://www.sciencedirect.com/science/article/abs/pii/S0167691104000398). In particular, most of the decentralized algorithms have two components:
 1. **Stochastic Gradient Descent (SGD)**: Each node uses its local data to update its copy of the model.
