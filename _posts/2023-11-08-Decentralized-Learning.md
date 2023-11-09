@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Decentralized Learning
-tags: Decentralized Learning
+tags: Decentralized_Learning
 ---
 
 Centralized federated learning setup requires frequent communication with the server which becomes a potential bottleneck. The server is usually connected to hundreds of clients and hence requires a very high network bandwidth reducing the communication speed. The server in such setups is a single point of failure. This has motivated the advancements in decentralized machine learning. Note that, in this post, the term federated learning implies centralized federated learning and decentralized learning implies decentralized federated learning. 
