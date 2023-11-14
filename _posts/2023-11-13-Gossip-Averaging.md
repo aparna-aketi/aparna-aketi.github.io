@@ -15,12 +15,13 @@ Note that there are many ways to implement distributed averaging. One straightfo
 4. *Neighbors of node-$i$:* $N_i$ represents all $j$'s such that $w_{ij} \neq 0$.
 5. *Initial values:* $x_i^{(0)}$   $\forall i \in [1,...,n]$
 
+**Gossip Averaging Algorithm:**
+
 ![Gossip Averaging]({{ '/assets/gossip_avg.png' | relative_url }}) 
 <div align="center">
 <strong>Figure 1: Illustrating a single iteration of gossip averaging using a 4-node ring topology.</strong>
 </div>
 <br>
-
 
 At every iteration of gossip averaging, there are three steps (refer to Figure 1):
 1. *Information Split:* Each node first splits the information based on corresponding column weights of W.
@@ -48,4 +49,17 @@ These constraints require the graph to be undirected and static. However, the [P
 <div align="center">
 <strong>Figure 2: Evolution of data over time in a 4-node undirected ring topology with gossip averaging. Initial data matrix X = [4 5 8 7]. The goal is to compute the average value i.e., 6 on each node.</strong>
 </div>
-<br>
+<be>
+
+**Properties of Doubly Stochastic Matrices:**
+
+Let $W \in [0, 1]^{n \times n}$ be a doubly stochastic matrix and $\mathbf{1}$ be a column matrix with every element as 1. 
+1. Row stochasticity: $W \mathbf{1}$ = $\mathbf{1}$
+2. Column stochasticity:  $\mathbf{1}^T$ $W$ = $\mathbf{1}^T$
+3. The largest eigenvalue of $W$ is 1 i.e., $\lambda_1(W)=1$
+4. The absolute eigenvalue of $W$ is bounded by 1 i.e., $|\lambda_i(W)| \leq 1$  $\forall i \in [1,n]$
+
+**Spectral Gap:**
+The spectral gap $\rho$ for a doubly stochastic matrix is given as $|\lambda_2(W)|$ where $1=|\lambda_1(W)| > |\lambda_2(W)| \geq ... \geq |\lambda_n(W)|$ are the ordered eigenvalues of $W$. Note that some papers also define $1-|\lambda_2(W)|$ or $|\lambda_2(W)|^2$ as spectral gap. However, we will consider the second-largest absolute eigenvalue of $W$ as the spectral gap of the connectivity graph.
+
+$\therefore \rho = |\lambda_2(W)| \in [0, 1)$
