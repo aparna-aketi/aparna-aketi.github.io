@@ -33,7 +33,7 @@ where $X_t^T = [x_1^t, x_2^t,...,x_n^t]$ and $x_i^t$ is the data/value on $i^{th
 
 **Convergence:**
 
-The gossip averaging algorithm converges in linear time with respect to the number of nodes i.e., $\mathcal{O}(n)$. The following are the constraints required for the linear convergence of the gossip averaging algorithm.
+The gossip averaging algorithm converges in linear time with respect to the number of nodes i.e., $O(n)$. The following are the constraints required for the linear convergence of the gossip averaging algorithm.
 
 1. *Strongly Connected Graph:* There is a path from each node to every other node.
 2. *Self Loops:* Each node is connected to itself.
