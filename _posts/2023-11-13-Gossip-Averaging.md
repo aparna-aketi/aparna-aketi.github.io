@@ -40,7 +40,7 @@ The gossip averaging algorithm converges in linear time with respect to the numb
 3. *Doubly Stochastic Mixing Matrix:* This implies two conditions
     *  *Column stochasticity:* Each column sums to one. This ensures that the average of the system is preserved at each iteration.
     *  *Row stochasticity:* Each row sums to one. This ensures that the addition of received information results in a valid weighted averaging.
-4. *Symmetric weight matrix:* This property helps in the convergence analysis and makes the practical realization of doubly stochastic mixing possible.
+4. *Symmetric Mixing Matrix:* This property helps in the convergence analysis and makes the practical realization of doubly stochastic mixing possible.
 
 
   
