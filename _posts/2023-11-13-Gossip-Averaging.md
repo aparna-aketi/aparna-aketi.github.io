@@ -49,7 +49,7 @@ These constraints require the graph to be undirected and static. However, the [P
 <div align="center">
 <strong>Figure 2: Evolution of data over time in a 4-node undirected ring topology with gossip averaging. Initial data matrix X = [4 5 8 7]. The goal is to compute the average value i.e., 6 on each node.</strong>
 </div>
-<be>
+<br>
 
 **Properties of Doubly Stochastic Matrices:**
 
