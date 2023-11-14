@@ -43,3 +43,9 @@ The gossip averaging algorithm converges in linear time with respect to the numb
 4. *Symmetric Mixing Matrix:* This property helps in the convergence analysis and makes the practical realization of doubly stochastic mixing possible.
 
 These constraints require the graph to be undirected and static. However, the [PushSum](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1238221) variant of the algorithm which communicates weights along with data allows the graph to be directed and time-varying.  
+
+![Gossip Averaging]({{ '/assets/ga_eg.gif' | relative_url }}) 
+<div align="center">
+<strong>Figure 2: Evolution of data over time in a 4-node undirected ring topology with gossip averaging. Initial data matrix X = [4 5 8 7]. The goal is to compute the average value i.e., 6 on each node.</strong>
+</div>
+<br>
