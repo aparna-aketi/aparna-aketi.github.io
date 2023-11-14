@@ -57,10 +57,10 @@ Let $W \in [0, 1]^{n \times n}$ be a doubly stochastic matrix and $\mathbf{1}$ b
 1. Row stochasticity: $W \mathbf{1}$ = $\mathbf{1}$
 2. Column stochasticity:  $\mathbf{1}^T$ $W$ = $\mathbf{1}^T$
 3. The largest eigenvalue of $W$ is 1 i.e., $\lambda_1(W)=1$
-4. The absolute eigenvalue of $W$ is bounded by 1 i.e., $|\lambda_i(W)| \leq 1$  $\forall i \in [1,n]$
+4. The absolute eigenvalue of $W$ is bounded by 1 i.e., $|\lambda_i(W)| \leq 1$  $\forall i \in \[1,n\]$
 
 **Spectral Gap:**
 
 The spectral gap $\rho$ for a doubly stochastic matrix is given as $|\lambda_2(W)|$ where $1=|\lambda_1(W)| > |\lambda_2(W)| \geq ... \geq |\lambda_n(W)|$ are the ordered eigenvalues of $W$. Note that some papers also define $1-|\lambda_2(W)|$ or $|\lambda_2(W)|^2$ as spectral gap. However, we will consider the second-largest absolute eigenvalue of $W$ as the spectral gap of the connectivity graph.
 
-$\therefore \rho = |\lambda_2(W)| \in [0, 1)$
+$\therefore \rho = |\lambda_2(W)| \in \[ 0, 1 \)$
