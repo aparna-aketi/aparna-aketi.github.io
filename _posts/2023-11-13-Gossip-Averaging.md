@@ -61,6 +61,9 @@ Let $W \in [0, 1]^{n \times n}$ be a doubly stochastic matrix and $\mathbf{1}$ b
 
 **Spectral Gap:**
 
-The spectral gap $\rho$ for a doubly stochastic matrix is given as $\| \lambda_2(W) \|$ where $1= \| \lambda_1(W) \| > \| \lambda_2(W) \| \geq ... \geq \| \lambda_n(W) \|$ are the ordered eigenvalues of $W$. Note that some papers also define $1-|\lambda_2(W)|$ or $|\lambda_2(W)|^2$ as spectral gap. However, we will consider the second-largest absolute eigenvalue of $W$ as the spectral gap of the connectivity graph.
+The spectral gap $\rho$ for a doubly stochastic matrix is given as $\| \lambda_2(W) \|$ where $1= \| \lambda_1(W) \| > \| \lambda_2(W) \| \geq ... \geq \| \lambda_n(W) \|$ are the ordered eigenvalues of $W$. 
 
-$\therefore \rho = |\lambda_2(W)| \in \[ 0, 1 \)$
+$\therefore \rho = \| \lambda_2(W) \| \in [0, 1)$
+
+A smaller spectral gap indicates that the graph has more connectivity and vice versa. In particular, a fully connected graph with uniform weights has zero spectral gap i.e., $\rho = \| \lambda_2(W) \| = 0$. The spectral gap (defined as $\delta = 1 - \rho$) for different topologies can be found in Table 1 of the [CHOCO-SGD](https://arxiv.org/pdf/1902.00340.pdf) paper. Note that some papers also define $1-\| \lambda_2(W) \|$ or $\| \lambda_2(W) \|^2$ as spectral gap. However, we will consider the second-largest absolute eigenvalue of $W$ as the spectral gap of the connectivity graph.
+
