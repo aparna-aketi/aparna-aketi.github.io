@@ -20,7 +20,7 @@ My recent research work mainly focuses on decentralized learning on heterogeneou
 *Authors:* _**Sai Aparna Aketi**_, Sangamesh Kodge, Kaushik Roy <br>
 *Journal:* Transactions on Machine Learning Research (TMLR 2023) <br>
 
-*[ Low precision decentralized distributed training](https://www.sciencedirect.com/science/article/abs/pii/S089360802200332X) over IID and non-IID data <br>
+* [Low precision decentralized distributed training](https://www.sciencedirect.com/science/article/abs/pii/S089360802200332X) over IID and non-IID data <br>
 *Authors:* _**Sai Aparna Aketi**_, Sangamesh Kodge, Kaushik Roy <br>
 *Journal:* Neural Networks (2022) <br>
 
