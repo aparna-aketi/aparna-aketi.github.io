@@ -11,7 +11,7 @@ Note that there are many ways to implement distributed averaging. One straightfo
 **Notations:**
 1. *Goal:* Compute the average of initial values in an $n$-node decentralized system.
 2. *Connectivity:* Sparse graph topology G(N,E). N = set of nodes = { $1,...,n$ }. E = set of edges.
-3. *Adjacency/Mixing Matrix (W):* $w_{ij} \neq 0$ for { $i,j$ } $\in E$ and $0 \leq w_{ij} \leq 1$.
+3. *Adjacency/Mixing Matrix (W):* $0 \leq w_{ij} \leq 1$ and $w_{ij} \neq 0$ for { $i,j$ } $\in E$.
 4. *Neighbors of node-$i$:* $N_i$ represents all $j$'s such that $w_{ij} \neq 0$.
 5. *Initial values:* $x_i^{(0)}$   $\forall i \in [1,...,n]$
 
@@ -61,7 +61,7 @@ Let $W \in [0, 1]^{n \times n}$ be a doubly stochastic matrix and $\mathbf{1}$ b
 
 **Spectral Gap:**
 
-The spectral gap $\rho$ for a doubly stochastic matrix is given as $\| \lambda_2(W) \|$ where $1= \| \lambda_1(W) \| > \| \lambda_2(W) \| \geq ... \geq \| \lambda_n(W) \|$ are the ordered eigenvalues of $W$. 
+The spectral gap ($\rho$) for a doubly stochastic matrix is given as $\| \lambda_2(W) \|$ where $1= \| \lambda_1(W) \| > \| \lambda_2(W) \| \geq ... \geq \| \lambda_n(W) \|$ are the ordered eigenvalues of $W$. 
 
 $\therefore \rho = \| \lambda_2(W) \| \in [0, 1)$
 
