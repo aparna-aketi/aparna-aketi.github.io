@@ -4,14 +4,14 @@ title: Gossip Averaging
 tags: Decentralized_Learning
 ---
 
-Gossip averaging is an important component in consensus-based decentralized learning algorithms. Gossip-based computation can be used to compute random samples, quantiles, or any other aggregate-based queries in a decentralized manner. In this post, we will look into the [gossip-averaging](https://ieeexplore.ieee.org/abstract/document/1498447) algorithm which aims to compute the average of the given decentralized system with fixed graph topology in linear time. In the decentralized setup, every node only communicates with its neighbors and the time (hops) required to pass the information from node $i$ to $j$ is equal to the shorted path length from $i$ to $j$.
+Gossip averaging is an important component in consensus-based decentralized learning algorithms. Gossip-based computation can be used to compute random samples, quantiles, or any other aggregate-based queries in a decentralized manner. In this post, we will look into the [gossip-averaging](https://ieeexplore.ieee.org/abstract/document/1498447) algorithm which aims to compute the average of the given decentralized system with fixed graph topology in linear time. In the decentralized setup, every node only communicates with its neighbors and the time (hops) required to pass the information from node $i$ to $j$ is equal to the shortest path length from $i$ to $j$.
 
 Note that there are many ways to implement distributed averaging. One straightforward method is [flooding](https://www.sciencedirect.com/science/article/pii/S0167691104000398). In this method, each node maintains a table of the initial values of all the nodes, initialized with its own node value. At each iteration, the nodes exchange the non-trivial information from their own tables with their neighbors. After a number of iterations equal to the diameter of the network, every node knows all the initial values of all the nodes, so the average can be computed. However, the flooding algorithm has a memory overhead proportional to the number of nodes in the system. Gossip averaging gets rid of this memory overhead.
 
 **Notations:**
 1. *Goal:* Compute the average of initial values in an $n$-node decentralized system.
 2. *Connectivity:* Sparse graph topology G(N,E). N = set of nodes = { $1,...,n$ }. E = set of edges.
-3. *Adjacency/Mixing Matrix (W):* $0 \leq w_{ij} \leq 1$ and $w_{ij} \neq 0$ for { $i,j$ } $\in E$.
+3. *Adjacency/Mixing Matrix (W):* $0 \leq w_{ij} < 1$ and $w_{ij} \neq 0$ for { $i,j$ } $\in E$.
 4. *Neighbors of node-$i$:* $N_i$ represents all $j$'s such that $w_{ij} \neq 0$.
 5. *Initial values:* $x_i^{(0)}$   $\forall i \in [1,...,n]$
 
@@ -61,7 +61,7 @@ Let $W \in [0, 1]^{n \times n}$ be a doubly stochastic matrix and $\mathbf{1}$ b
 
 **Spectral Gap:**
 
-The spectral gap ($\rho$) for a doubly stochastic matrix is given as $\| \lambda_2(W) \|$ where $1= \| \lambda_1(W) \| > \| \lambda_2(W) \| \geq ... \geq \| \lambda_n(W) \|$ are the ordered eigenvalues of $W$. 
+The spectral gap ($\rho$) of a doubly stochastic matrix is defined as $\| \lambda_2(W) \|$ where $1= \| \lambda_1(W) \| > \| \lambda_2(W) \| \geq ... \geq \| \lambda_n(W) \|$ are the ordered eigenvalues of $W$. 
 
 $\therefore \rho = \| \lambda_2(W) \| \in [0, 1)$
 
