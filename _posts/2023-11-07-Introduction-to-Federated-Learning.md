@@ -33,13 +33,13 @@ In all these cases, we assumed that models (ANNs) and data distributions are hom
 
 ### Federated Averaging (FedAvg):
 
-FedAvg Algorithm is developed for a centralized federated learning setup with horizontal data partitioning and the data is Independent and Identically Distributed (IID). Let's consider an FL setup with K clients connected to a server with no access to clients' data and each of these clients contains a subset of the CIFAR-10 dataset (overlapping subsets). Now, we want to train a ResNet-20 model on the entire CIFAR-10 dataset without directly sharing the data. To achieve this, we use the FedAvg algorithm. The following are the hyperparameters for FedAvg: B (local batch size on each client), E (number of local epochs between two consecutive communication rounds), m (number of clients participating in each communication round), $n_k$ is the total number of iterations in E epochs for a given client $k$, the participation rate is $\frac{m}{K}$, learning rate $\eta$. The model parameters on all clients are initialized to the same values. We denote the model parameters at iteration $t$ on client $k$ by $x_k^t$ and on the server by $x^t$, $D_k$ is the data partition on client $k$. FedAvg algorithm executes as follows:
+FedAvg Algorithm is developed for a centralized federated learning setup with horizontal data partitioning and the data is Independent and Identically Distributed (IID). Let's consider an FL setup with K clients connected to a server with no access to clients' data and each of these clients contains a subset of the CIFAR-10 dataset (overlapping subsets). Now, we want to train a ResNet-20 model on the entire CIFAR-10 dataset without directly sharing the data. To achieve this, we use the FedAvg algorithm. The following are the hyperparameters for FedAvg: B is the local batch size on each client, E is the number of local epochs between two consecutive communication rounds, p is the number of clients participating in each communication round, $n_k$ is the total number of iterations in E epochs for a given client $k$, the participation rate is $\frac{p}{K}$, learning rate $\eta$. The model parameters on all clients are initialized to the same values. We denote the model parameters at iteration $t$ on client $k$ by $x_k^t$ and on the server by $x^t$, $D_k$ is the data partition on client $k$. FedAvg algorithm executes as follows:
 
 **Server Executes**
 
    1. initialize $x^0$
    2. **for** each communication round $t=1,2,...,T$ **do**
-       * Pick $S_t$ - a random set of m clients
+       * Pick $S_t$ - a random set of p clients
        * **for** each client $k \in S_t$ **in parallel do**
          * $x^{t+1}_k$ = ClientUpdate($k$, $x^t$)  
        * $m^t = \sum_{k \in S_t} n_k$  
