@@ -33,24 +33,24 @@ In all these cases, we assumed that models (ANNs) and data distributions are hom
 
 ### Federated Averaging (FedAvg):
 
-FedAvg Algorithm is developed for a centralized federated learning setup with horizontal data partitioning and the data is Independent and Identically Distributed (IID). Let's consider an FL setup with K clients connected to a server with no access to clients' data and each of these clients contains a subset of the CIFAR-10 dataset (overlapping subsets). Now, we want to train a ResNet-20 model on the entire CIFAR-10 dataset without directly sharing the data. To achieve this, we use the FedAvg algorithm. The following are the hyperparameters for FedAvg: B is the local batch size on each client, E is the number of local epochs between two consecutive communication rounds, p is the number of clients participating in each communication round, $n_k$ is the total number of iterations in E epochs for a given client $k$, the participation rate is $\frac{p}{K}$, learning rate $\eta$. The model parameters on all clients are initialized to the same values. We denote the model parameters at iteration $t$ on client $k$ by $x_k^t$ and on the server by $x^t$, $D_k$ is the data partition on client $k$. FedAvg algorithm executes as follows:
+FedAvg Algorithm is developed for a centralized federated learning setup with horizontal data partitioning and the data is Independent and Identically Distributed (IID). Let's consider an FL setup with K clients connected to a server with no access to clients' data and each of these clients contains an overlapping subset of a dataset (eg: CIFAR-10). Now, we want to train a model (eg: ResNet-20) on the entire dataset without directly sharing the data. To achieve this, we use the FedAvg algorithm. The following are the hyperparameters for FedAvg: B is the local batch size on each client, E is the number of local epochs between two consecutive communication rounds, p is the number of clients participating in each communication round, $n_k$ is the total number of iterations in E epochs for a given client $k$, the participation rate is $\frac{p}{K}$, learning rate $\eta$. The model parameters on all clients are initialized to the same values. We denote the model parameters at iteration $t$ on client $k$ by $x_k^t$ and on the server by $x^t$, $D_k$ is the data partition on client $k$. FedAvg algorithm executes as follows:
 
 **Server Executes**
 
-   1. initialize $x^0$
-   2. **for** each communication round $t=1,2,...,T$ **do**
-       * Pick $S_t$ - a random set of p clients
-       * **for** each client $k \in S_t$ **in parallel do**
-         * $x^{t+1}_k$ = ClientUpdate($k$, $x^t$)  
-       * $m^t = \sum_{k \in S_t} n_k$  
-       * $x^{t+1} = \sum_{k \in S_t} \frac{n_k}{m^t} x^{t+1}_k$
+   > 1. initialize $x^0$
+   > 2. **for** each communication round $t=1,2,...,T$ **do**
+   >    * Pick $S_t$ - a random set of p clients
+   >    * **for** each client $k \in S_t$ **in parallel do**
+   >      * $x^{t+1}_k$ = ClientUpdate($k$, $x^t$)  
+   >    * $m^t = \sum_{k \in S_t} n_k$  
+   >    * $x^{t+1} = \sum_{k \in S_t} \frac{n_k}{m^t} x^{t+1}_k$
 
 **ClientUpdate(k,x)**
 
-   1. Split $D_k$ into batches of size B and set $x_k = x$
-   2. **for** each local epoch $i=1,2,...,E$ **do**
-       * **for** each batch $b$ **do**
-         * $x_k = x_k - \eta \nabla L(x_k,b)$ 
-   3. return $x_k$ to server
+   > 1. Split $D_k$ into batches of size B and set $x_k = x$
+   > 2. **for** each local epoch $i=1,2,...,E$ **do**
+   >    * **for** each batch $b$ **do**
+   >      * $x_k = x_k - \eta \nabla L(x_k,b)$ 
+   > 3. return $x_k$ to server
 
-
+At each communication round, the server randomly selects $p$ clients and sends them the most recent version of the model parameters. The clients, after receiving the model, run SGD locally for $E$ epochs and send the updated model parameters back to the server. Now, the server aggregates the information received from clients by updating the model parameters with the average of parameters received from each client. Note that the server computes the weighted average of the parameters received from the client where the weight for each client depends on $n_k$ i.e., the number of iterations (or updates) it performed in the current round.
