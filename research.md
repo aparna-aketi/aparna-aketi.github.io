@@ -18,7 +18,11 @@ My recent research work mainly focuses on decentralized learning on heterogeneou
 
 * [Neighborhood Gradient Mean](https://openreview.net/forum?id=vkiKzK5G3e): An Efficient Decentralized Learning Method for Non-IID Data <br>
 *Authors:* _**Sai Aparna Aketi**_, Sangamesh Kodge, Kaushik Roy <br>
-*Journal:* Transactions on Machine Learning Research (TMLR 2023) <br>
+*Journal:* Transactions on Machine Learning Research (TMLR 2023) <be>
+
+* [CoDeC](https://openreview.net/forum?id=N05OnQG1BA): Communication-Efficient Decentralized Continual Learning <br>
+*Authors:* Sakshi Choudhary, _**Sai Aparna Aketi**_, Gobinda Saha, Kaushik Roy <br>
+*Journal:* Transactions on Machine Learning Research (TMLR 2024) <br>
 
 * [Low precision decentralized distributed training](https://www.sciencedirect.com/science/article/abs/pii/S089360802200332X) over IID and non-IID data <br>
 *Authors:* _**Sai Aparna Aketi**_, Sangamesh Kodge, Kaushik Roy <br>
@@ -35,14 +39,15 @@ My recent research work mainly focuses on decentralized learning on heterogeneou
 
 #### **Workshop Papers** ####
 
+* [Averaging Rate Scheduler](https://openreview.net/forum?id=w9ZzNmWmjA) for Decentralized Learning on Heterogeneous Data <br>
+*Authors:* _**Sai Aparna Aketi**_, Sakshi Choudhary, Kaushik Roy <br>
+*Conference:* Tiny Paper at ICLR (2024) <be>
+
 * [Neighborhood Gradient Clustering](https://openreview.net/pdf?id=8raYY71qmn): An Efficient Decentralized Learning Method for Non-IID Data <br>
 *Authors:* _**Sai Aparna Aketi**_, Sangamesh Kodge, Kaushik Roy <br>
 *Conference:* Federated Learning and Analytics in Practice workshop at ICML (2023) <br>
 
 #### **Preprints** ####
-
-* [CoDeC](https://arxiv.org/abs/2303.15378): Communication-Efficient Decentralized Continual Learning <br>
-*Authors:* Sakshi Choudhary, _**Sai Aparna Aketi**_, Gobinda Saha, Kaushik Roy <br>
 
 * [Homogenizing Non-IID datasets](https://arxiv.org/abs/2304.04326) via In-Distribution Knowledge Distillation for Decentralized Learning <br>
 *Authors:* Deepak Ravikumar, Gobinda Saha, _**Sai Aparna Aketi**_, Kaushik Roy <br>
